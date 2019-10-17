@@ -22,11 +22,12 @@ namespace Duolingo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<LessonsView, LessonsViewModel>();
             containerRegistry.RegisterForNavigation<TrainingView, TrainingViewModel>();
