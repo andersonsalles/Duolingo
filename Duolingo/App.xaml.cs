@@ -22,7 +22,8 @@ namespace Duolingo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            var mainPage = $"{nameof(NavigationPage)}/{nameof(MainPage)}";
+            await NavigationService.NavigateAsync(mainPage);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
