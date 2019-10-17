@@ -27,6 +27,11 @@ namespace Duolingo
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<LessonsView>();
+            containerRegistry.RegisterForNavigation<TrainingView>();
+            containerRegistry.RegisterForNavigation<ProfileView>();
+            containerRegistry.RegisterForNavigation<RankingView>();
+            containerRegistry.RegisterForNavigation<StoreView>();
         }
 
         protected override void OnStart()
