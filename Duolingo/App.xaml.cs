@@ -1,4 +1,5 @@
-﻿using Duolingo.Views;
+﻿using Duolingo.ViewModels;
+using Duolingo.Views;
 using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -27,11 +28,11 @@ namespace Duolingo
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainPage>();
-            containerRegistry.RegisterForNavigation<LessonsView>();
-            containerRegistry.RegisterForNavigation<TrainingView>();
-            containerRegistry.RegisterForNavigation<ProfileView>();
-            containerRegistry.RegisterForNavigation<RankingView>();
-            containerRegistry.RegisterForNavigation<StoreView>();
+            containerRegistry.RegisterForNavigation<LessonsView, LessonsViewModel>();
+            containerRegistry.RegisterForNavigation<TrainingView, TrainingViewModel>();
+            containerRegistry.RegisterForNavigation<ProfileView, ProfileViewModel>();
+            containerRegistry.RegisterForNavigation<RankingView, RankingViewModel>();
+            containerRegistry.RegisterForNavigation<StoreView, StoreViewModel>();
         }
 
         protected override void OnStart()
