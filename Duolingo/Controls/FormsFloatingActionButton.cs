@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Duolingo.Controls
 {
-    class FormsFloatingActionButton : Button
+    public class FormsFloatingActionButton : Button
     {
     }
 }
