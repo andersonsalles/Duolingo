@@ -23,10 +23,12 @@
             </ScrollView>
             
             <controls:FormsFloatingActionButton 
+                IsVisible="{OnPlatform Android=true, iOS=false}"
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 HorizontalOptions="End"
-                VerticalOptions="End"/>
+                VerticalOptions="End"
+                Command="{Binding NavigateToTrainingCommand}"/>
         </AbsoluteLayout>
         
     </ContentPage.Content>

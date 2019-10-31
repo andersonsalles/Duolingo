@@ -32,7 +32,7 @@ namespace Duolingo.Droid.Renderers
 
         private void OnFabClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Element?.Command?.Execute(null);
         }
     }
 }
