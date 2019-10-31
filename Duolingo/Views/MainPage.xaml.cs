@@ -16,6 +16,28 @@ namespace Duolingo.Views
         public MainPage()
         {
             InitializeComponent();
+            Children.Add(new LessonsView());
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                Children.Add(new TrainingView());
+            }
+            Children.Add(new ProfileView());
+            Children.Add(new RankingView());
+            Children.Add(new StoreView());
+            
+
+            //        < TabbedPage.Children >
+            //< views:LessonsView />
+            //
+            // < views:TrainingView />
+            //
+            //  < views:ProfileView />
+            //
+            //   < views:RankingView />
+            //
+            //    < views:StoreView />
+            //
+            // </ TabbedPage.Children >
         }
     }
 }

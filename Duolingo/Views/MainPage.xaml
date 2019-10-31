@@ -12,12 +12,6 @@
             Title="Titulo App"
             x:Class="Duolingo.Views.MainPage">
 
-    <TabbedPage.Children>
-        <views:LessonsView/>
-        <views:TrainingView/>
-        <views:ProfileView/>
-        <views:RankingView/>
-        <views:StoreView/>
-    </TabbedPage.Children>
+
 
 </TabbedPage>
