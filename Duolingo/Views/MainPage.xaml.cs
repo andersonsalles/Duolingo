@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Duolingo.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -24,20 +25,19 @@ namespace Duolingo.Views
             Children.Add(new ProfileView());
             Children.Add(new RankingView());
             Children.Add(new StoreView());
-            
+        }
 
-            //        < TabbedPage.Children >
-            //< views:LessonsView />
-            //
-            // < views:TrainingView />
-            //
-            //  < views:ProfileView />
-            //
-            //   < views:RankingView />
-            //
-            //    < views:StoreView />
-            //
-            // </ TabbedPage.Children >
+        protected override void OnCurrentPageChanged()
+        {
+            base.OnCurrentPageChanged();
+
+            if(CurrentPage is IDynamicTitle page)
+            {
+                NavigationPage.SetHasNavigationBar(this, true);
+                NavigationPage.SetTitleView(this, page.GetTitle());
+                return;
+            }
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
