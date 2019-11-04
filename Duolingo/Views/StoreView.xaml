@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Duolingo.Views.StoreView"
-             Title="Store">
+             x:Class="Duolingo.Views.StoreView">
     <ContentPage.Content>
         <Label Text="Store View"></Label>
     </ContentPage.Content>

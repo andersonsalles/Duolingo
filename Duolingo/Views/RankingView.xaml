@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Duolingo.Views.RankingView"
-             Title="Ranking">
+             x:Class="Duolingo.Views.RankingView">
     <ContentPage.Content>
         <Label Text="Ranking view"></Label>
     </ContentPage.Content>

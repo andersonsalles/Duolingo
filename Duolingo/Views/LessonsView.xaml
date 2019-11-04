@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Duolingo.Controls"
              mc:Ignorable="d"
-             Title="Lessons"
              x:Class="Duolingo.Views.LessonsView">
     <ContentPage.Content>
         <AbsoluteLayout>
