@@ -12,12 +12,22 @@ using Xamarin.Forms.Xaml;
 namespace Duolingo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StoreView : ContentPage, IDynamicTitle
+    public partial class StoreView : ContentPage, IDynamicTitle, ITabPageIcons
     {
         private View _title;
         public StoreView()
         {
             InitializeComponent();
+        }
+
+        public string GetIcon()
+        {
+            return "tab_store";
+        }
+
+        public string GetSelectedIcon()
+        {
+            return "tab_store_selected";
         }
 
         public View GetTitle()

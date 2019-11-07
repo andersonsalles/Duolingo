@@ -2,6 +2,7 @@
 using Android.Support.Design.BottomNavigation;
 using Android.Support.Design.Widget;
 using Duolingo.Droid.Renderers;
+using Duolingo.Interfaces;
 using Duolingo.Views;
 using System;
 using Xamarin.Forms;
@@ -49,50 +50,26 @@ namespace Duolingo.Droid.Renderers
             for (int index = 0; index < _formsTabs.Children.Count; index++)
             {
                 var androidTab = _bottomNavigationView.Menu.GetItem(index);
-
-                if (_formsTabs.Children[index] is LessonsView)
+                int iconId;
+                if (_formsTabs.Children[index] is ITabPageIcons tabPage)
                 {
                     if (_formsTabs.Children[index] == _formsTabs.CurrentPage)
                     {
-                        androidTab.SetIcon(Resource.Drawable.tab_lessons_selected);
+                        iconId = GetIconIdByFileName(tabPage.GetSelectedIcon());
+                        androidTab.SetIcon(iconId);
                         continue;
                     }
-                    androidTab.SetIcon(Resource.Drawable.tab_lessons);
-                    continue;
-                }
-                if (_formsTabs.Children[index] is ProfileView)
-                {
-                    if (_formsTabs.Children[index] == _formsTabs.CurrentPage)
-                    {
-                        androidTab.SetIcon(Resource.Drawable.tab_profile_selected);
-                        continue;
-                    }
-                    androidTab.SetIcon(Resource.Drawable.tab_profile);
-                    continue;
-                }
-                if (_formsTabs.Children[index] is RankingView)
-                {
-                    if (_formsTabs.Children[index] == _formsTabs.CurrentPage)
-                    {
-                        androidTab.SetIcon(Resource.Drawable.tab_ranking_selected);
-                        continue;
-                    }
-
-                    androidTab.SetIcon(Resource.Drawable.tab_ranking);
-                    continue;
-                }
-                if (_formsTabs.Children[index] is StoreView)
-                {
-                    if (_formsTabs.Children[index] == _formsTabs.CurrentPage)
-                    {
-                        androidTab.SetIcon(Resource.Drawable.tab_store_selected);
-                        continue;
-                    }
-                    androidTab.SetIcon(Resource.Drawable.tab_store);
+                    iconId = GetIconIdByFileName(tabPage.GetIcon());
+                    androidTab.SetIcon(iconId);
                     continue;
                 }
 
             }
+        }
+
+        private int GetIconIdByFileName(string fileName)
+        {
+            return Resources.GetIdentifier(fileName, "drawable", Context.PackageName);
         }
 
         private void OnCurrentPageChanged(object sender, EventArgs e)

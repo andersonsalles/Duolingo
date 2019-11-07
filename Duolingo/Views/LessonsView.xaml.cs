@@ -12,12 +12,22 @@ using Xamarin.Forms.Xaml;
 namespace Duolingo.Views
 {
     
-    public partial class LessonsView : ContentPage, IDynamicTitle
+    public partial class LessonsView : ContentPage, IDynamicTitle, ITabPageIcons
     {
         private View _title;
         public LessonsView()
         {
             InitializeComponent();
+        }
+
+        public string GetIcon()
+        {
+            return "tab_lessons";
+        }
+
+        public string GetSelectedIcon()
+        {
+            return "tab_lessons_selected";
         }
 
         public View GetTitle()
