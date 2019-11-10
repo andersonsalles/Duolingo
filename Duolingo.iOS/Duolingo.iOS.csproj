@@ -164,4 +164,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\tab_training_selected.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\navbar_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\navbar_configuration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\navbar_crown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\navbar_diamont.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\navbar_english.png" />
+  </ItemGroup>
 </Project>
