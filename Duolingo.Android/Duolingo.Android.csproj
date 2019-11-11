@@ -74,6 +74,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Fonts\DINNextRoundedLTPro-Regular.ttf" />
+    <AndroidAsset Include="Assets\Fonts\DINNextRoundedLTPro-Bold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
