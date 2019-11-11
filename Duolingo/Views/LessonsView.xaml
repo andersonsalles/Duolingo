@@ -13,7 +13,8 @@
                 AbsoluteLayout.LayoutFlags="All"
             >
                 <StackLayout>
-                    <Label Text="Lessons View" FontSize="60" Margin="0,50,0,50"></Label>
+                    <Label Text="Lessons View" FontSize="60" Margin="0,50,0,50"
+                           FontFamily="{OnPlatform Android='Fonts/DINNextRoundedLTPro-Bold.ttf#DINNextRounded'}"></Label>
                     <Label Text="Lessons View" FontSize="60" Margin="0,50,0,50"></Label>
                     <Label Text="Lessons View" FontSize="60" Margin="0,50,0,50"></Label>
                     <Label Text="Lessons View" FontSize="60" Margin="0,50,0,50"></Label>

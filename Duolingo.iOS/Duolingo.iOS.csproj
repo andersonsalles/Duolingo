@@ -64,7 +64,9 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CustomTabbedPageRenderer.cs" />
     <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
+    <None Include="Info.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\Fonts\DINNextRoundedLTPro-Bold.ttf" />
     <BundleResource Include="Resources\Fonts\DINNextRoundedLTPro-Regular.ttf" />
