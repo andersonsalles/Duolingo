@@ -12,6 +12,9 @@ namespace Duolingo.Droid.Renderers
 {
     public class FormsFloatActionButtonRenderer : Xamarin.Forms.Platform.Android.AppCompat.ViewRenderer<FormsFloatingActionButton, FloatingActionButton>
     {
+        private FloatingActionButton _floatingActionButton;
+
+
         public FormsFloatActionButtonRenderer(Context context) : base (context)
         {
 
@@ -23,13 +26,21 @@ namespace Duolingo.Droid.Renderers
 
             if (e.NewElement != null)
             {
-                var fab = new FloatingActionButton(Context);
-                fab.UseCompatPadding = true;
-                fab.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.White);
-                fab.Click += OnFabClick;
-                SetNativeControl(fab);
+                _floatingActionButton = new FloatingActionButton(Context);
+                _floatingActionButton.UseCompatPadding = true;
+                
+                ConfigureBackgroundColor();
+                _floatingActionButton.Click += OnFabClick;
+                SetNativeControl(_floatingActionButton);
             }
             
+        }
+
+        private void ConfigureBackgroundColor()
+        {
+            var floatActionButtonColor = Element.BackgroundColor.ToAndroid();
+            _floatingActionButton.BackgroundTintList = ColorStateList.ValueOf(floatActionButtonColor);
+
         }
 
         private void OnFabClick(object sender, EventArgs e)

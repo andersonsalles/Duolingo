@@ -27,7 +27,9 @@
                 AbsoluteLayout.LayoutFlags="All"
                 HorizontalOptions="End"
                 VerticalOptions="End"
-                Command="{Binding NavigateToTrainingCommand}"/>
+                BackgroundColor="Blue"
+                Command="{Binding NavigateToTrainingCommand}"
+             />
         </AbsoluteLayout>
         
     </ContentPage.Content>
