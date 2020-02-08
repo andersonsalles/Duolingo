@@ -22,10 +22,6 @@ namespace Duolingo
         {
             InitializeComponent();
 
-#if DEBUG
-            Xamarin.Forms.HotReloader.Current.Run(this);
-#endif
-
             var mainPage = $"{nameof(NavigationPage)}/{nameof(MainPage)}";
             await NavigationService.NavigateAsync(mainPage);
         }

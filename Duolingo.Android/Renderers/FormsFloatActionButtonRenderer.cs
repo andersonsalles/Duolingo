@@ -5,6 +5,7 @@ using Android.Content;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 using Duolingo.Droid.Renderers;
+using Android.Content.Res;
 
 [assembly: ExportRenderer(typeof(FormsFloatingActionButton), typeof(FormsFloatActionButtonRenderer))]
 namespace Duolingo.Droid.Renderers
@@ -24,6 +25,7 @@ namespace Duolingo.Droid.Renderers
             {
                 var fab = new FloatingActionButton(Context);
                 fab.UseCompatPadding = true;
+                fab.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.White);
                 fab.Click += OnFabClick;
                 SetNativeControl(fab);
             }
