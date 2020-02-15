@@ -30,6 +30,7 @@ namespace Duolingo.Droid.Renderers
                 _floatingActionButton.UseCompatPadding = true;
                 
                 ConfigureBackgroundColor();
+                ConfigureDrawable();
                 _floatingActionButton.Click += OnFabClick;
                 SetNativeControl(_floatingActionButton);
             }
@@ -51,6 +52,11 @@ namespace Duolingo.Droid.Renderers
         private void OnFabClick(object sender, EventArgs e)
         {
             Element?.Command?.Execute(null);
+        }
+
+        private void ConfigureDrawable()
+        {
+            _floatingActionButton.SetImageResource(Resource.Drawable.fab_training);
         }
     }
 }
