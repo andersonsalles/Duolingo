@@ -38,8 +38,13 @@ namespace Duolingo.Droid.Renderers
 
         private void ConfigureBackgroundColor()
         {
+            if (Element is null)
+            {
+                return;
+            }
             var floatActionButtonColor = Element.BackgroundColor.ToAndroid();
             _floatingActionButton.BackgroundTintList = ColorStateList.ValueOf(floatActionButtonColor);
+            Element.BackgroundColor = Color.Transparent;
 
         }
 
