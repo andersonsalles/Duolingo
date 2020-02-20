@@ -6,6 +6,7 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 using Duolingo.Droid.Renderers;
 using Android.Content.Res;
+using Duolingo.Droid.Utils;
 
 [assembly: ExportRenderer(typeof(FormsFloatingActionButton), typeof(FormsFloatActionButtonRenderer))]
 namespace Duolingo.Droid.Renderers
@@ -30,7 +31,7 @@ namespace Duolingo.Droid.Renderers
                 _floatingActionButton.UseCompatPadding = true;
                 
                 ConfigureBackgroundColor();
-                ConfigureDrawable();
+                ConfigureImage();
                 _floatingActionButton.Click += OnFabClick;
                 SetNativeControl(_floatingActionButton);
             }
@@ -54,9 +55,20 @@ namespace Duolingo.Droid.Renderers
             Element?.Command?.Execute(null);
         }
 
-        private void ConfigureDrawable()
+        private void ConfigureImage()
         {
-            _floatingActionButton.SetImageResource(Resource.Drawable.fab_training);
+            if (Element == null)
+            {
+                return;
+            }
+            var fileName = (Element.ImageSource as FileImageSource)?.File;
+            if (fileName == null)
+            {
+                return;
+            }
+            //var resourceId = Resources.GetIdentifier(fileName, "drawable", Context.PackageName);
+            var resourceId = ResourceUtil.GetDrawableIdByFileName(fileName, Context);
+            _floatingActionButton.SetImageResource(resourceId);
         }
     }
 }

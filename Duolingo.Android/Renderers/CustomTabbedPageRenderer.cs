@@ -2,6 +2,7 @@
 using Android.Support.Design.BottomNavigation;
 using Android.Support.Design.Widget;
 using Duolingo.Droid.Renderers;
+using Duolingo.Droid.Utils;
 using Duolingo.Interfaces;
 using Duolingo.Views;
 using System;
@@ -55,11 +56,11 @@ namespace Duolingo.Droid.Renderers
                 {
                     if (_formsTabs.Children[index] == _formsTabs.CurrentPage)
                     {
-                        iconId = GetIconIdByFileName(tabPage.GetSelectedIcon());
+                        iconId = ResourceUtil.GetDrawableIdByFileName(tabPage.GetSelectedIcon(), Context);
                         androidTab.SetIcon(iconId);
                         continue;
                     }
-                    iconId = GetIconIdByFileName(tabPage.GetIcon());
+                    iconId = ResourceUtil.GetDrawableIdByFileName(tabPage.GetIcon(), Context);
                     androidTab.SetIcon(iconId);
                     continue;
                 }
@@ -67,10 +68,7 @@ namespace Duolingo.Droid.Renderers
             }
         }
 
-        private int GetIconIdByFileName(string fileName)
-        {
-            return Resources.GetIdentifier(fileName, "drawable", Context.PackageName);
-        }
+       
 
         private void OnCurrentPageChanged(object sender, EventArgs e)
         {
